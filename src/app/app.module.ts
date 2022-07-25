@@ -16,6 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxBarcodeModule } from 'ngx-barcode';
+import { NgxPrintModule } from 'ngx-print';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NgxBarcodeModule } from 'ngx-barcode';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxPrintModule,
     MatInputModule,
+    AngularSvgIconModule,
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,

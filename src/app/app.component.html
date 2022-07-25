@@ -5,7 +5,7 @@
     <mat-icon style="transform: rotate(90deg)" *ngIf="drawer.opened">menu</mat-icon>
   </button>
 
-  <span>My App</span>
+  <span>POSTINICO</span>
   <span class="example-spacer"></span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
@@ -14,7 +14,6 @@
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
-
 
 <mat-drawer-container class="example-container" autosize>
 
@@ -41,15 +40,21 @@
         <form class="example-form">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Digite</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
+            <input name="valor" ngModel matInput placeholder="Ex. 123456789123" #txtValor="ngModel" title="Imprimir">
           </mat-form-field>
-
         </form>
       </td>
     </tr>
     <tr>
       <td>
-        <ngx-barcode [bc-height]='40' [bc-width]='1.8' [bc-value]=codigo [bc-display-value]="true"></ngx-barcode>
+        <button printSectionId="print-section" ngxPrint mat-raised-button color="primary"><mat-icon>print</mat-icon> bar code</button>
+      </td>
+
+    </tr>
+    <tr>
+      <td id="print-section" style="width:75%;">
+        <ngx-barcode [bc-height]='40' [bc-width]='2' [bc-value]=txtValor.value [bc-display-value]="true">
+        </ngx-barcode>
       </td>
     </tr>
   </table>
